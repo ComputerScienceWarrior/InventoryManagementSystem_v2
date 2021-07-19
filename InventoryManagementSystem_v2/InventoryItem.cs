@@ -33,5 +33,11 @@ namespace InventoryManagementSystem_v2
 			price = 0.00M;
 			this.quantity = quantity;
 		}
+		public InventoryItem(string name, decimal price, int quantity)
+		{
+			this.name = name;
+			price = 0.00M;
+			this.quantity = quantity;
+		}
 	}
 }

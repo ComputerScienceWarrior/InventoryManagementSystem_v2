@@ -26,5 +26,22 @@ namespace InventoryManagementSystem_v2
 				System.Windows.Forms.MessageBox.Show("Displaying Inventory Contents..");
 			}
 		}
+
+		public void AddProduct(InventoryItem item)
+		{
+			inventory.Add(item);
+		}
+
+		public void RemoveProduct(InventoryItem item)
+		{
+			if (inventory.Contains(item))
+			{
+				inventory.Remove(item);
+			}
+			else
+			{
+				System.Windows.Forms.MessageBox.Show("Item does not exist!");
+			}
+		}
 	}
 }
