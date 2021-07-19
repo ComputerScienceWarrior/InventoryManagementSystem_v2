@@ -47,11 +47,14 @@ namespace InventoryManagementSystem_v2
 			this.ItemNameLabel = new System.Windows.Forms.Label();
 			this.ItemPriceLabel = new System.Windows.Forms.Label();
 			this.ItemQuantityLabel = new System.Windows.Forms.Label();
+			this.InventoryDisplayList = new System.Windows.Forms.ListBox();
+			this.InventoryDisplayBox = new System.Windows.Forms.GroupBox();
 			this.UserInfoPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
+			this.InventoryDisplayBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// UserInfoPanel
@@ -123,6 +126,7 @@ namespace InventoryManagementSystem_v2
 			this.SearchButton.TabIndex = 4;
 			this.SearchButton.Text = "Search";
 			this.SearchButton.UseVisualStyleBackColor = true;
+			this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
 			// 
 			// DisplayButton
 			// 
@@ -133,6 +137,7 @@ namespace InventoryManagementSystem_v2
 			this.DisplayButton.TabIndex = 3;
 			this.DisplayButton.Text = "Display Inventory";
 			this.DisplayButton.UseVisualStyleBackColor = true;
+			this.DisplayButton.Click += new System.EventHandler(this.DisplayButton_Click);
 			// 
 			// UpdateButton
 			// 
@@ -143,6 +148,7 @@ namespace InventoryManagementSystem_v2
 			this.UpdateButton.TabIndex = 2;
 			this.UpdateButton.Text = "Update";
 			this.UpdateButton.UseVisualStyleBackColor = true;
+			this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
 			// 
 			// RemoveButton
 			// 
@@ -153,6 +159,7 @@ namespace InventoryManagementSystem_v2
 			this.RemoveButton.TabIndex = 1;
 			this.RemoveButton.Text = "Remove";
 			this.RemoveButton.UseVisualStyleBackColor = true;
+			this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
 			// 
 			// AddButton
 			// 
@@ -163,6 +170,7 @@ namespace InventoryManagementSystem_v2
 			this.AddButton.TabIndex = 0;
 			this.AddButton.Text = "Add";
 			this.AddButton.UseVisualStyleBackColor = true;
+			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
 			// 
 			// panel1
 			// 
@@ -243,12 +251,32 @@ namespace InventoryManagementSystem_v2
 			this.ItemQuantityLabel.TabIndex = 8;
 			this.ItemQuantityLabel.Text = "Item Quantity:";
 			// 
+			// InventoryDisplayList
+			// 
+			this.InventoryDisplayList.FormattingEnabled = true;
+			this.InventoryDisplayList.ItemHeight = 18;
+			this.InventoryDisplayList.Location = new System.Drawing.Point(17, 23);
+			this.InventoryDisplayList.Name = "InventoryDisplayList";
+			this.InventoryDisplayList.Size = new System.Drawing.Size(490, 220);
+			this.InventoryDisplayList.TabIndex = 2;
+			// 
+			// InventoryDisplayBox
+			// 
+			this.InventoryDisplayBox.Controls.Add(this.InventoryDisplayList);
+			this.InventoryDisplayBox.Location = new System.Drawing.Point(376, 18);
+			this.InventoryDisplayBox.Name = "InventoryDisplayBox";
+			this.InventoryDisplayBox.Size = new System.Drawing.Size(526, 301);
+			this.InventoryDisplayBox.TabIndex = 3;
+			this.InventoryDisplayBox.TabStop = false;
+			this.InventoryDisplayBox.Text = "Listed Inventory";
+			// 
 			// MainScreen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSlateBlue;
 			this.ClientSize = new System.Drawing.Size(1276, 589);
+			this.Controls.Add(this.InventoryDisplayBox);
 			this.Controls.Add(this.UserInfoPanel);
 			this.Controls.Add(this.panel1);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,6 +292,7 @@ namespace InventoryManagementSystem_v2
 			this.panel1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
+			this.InventoryDisplayBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -287,6 +316,8 @@ namespace InventoryManagementSystem_v2
 		private System.Windows.Forms.TextBox ItemName;
 		private System.Windows.Forms.Label ItemQuantityLabel;
 		private System.Windows.Forms.Label ItemPriceLabel;
+		private System.Windows.Forms.ListBox InventoryDisplayList;
+		private System.Windows.Forms.GroupBox InventoryDisplayBox;
 	}
 }
 
