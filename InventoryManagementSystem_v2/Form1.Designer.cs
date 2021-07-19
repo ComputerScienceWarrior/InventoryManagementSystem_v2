@@ -58,20 +58,20 @@ namespace InventoryManagementSystem_v2
 			// 
 			this.UserInfoPanel.Controls.Add(this.UserImage);
 			this.UserInfoPanel.Controls.Add(this.UsernameLabel);
-			this.UserInfoPanel.Location = new System.Drawing.Point(909, 12);
+			this.UserInfoPanel.Location = new System.Drawing.Point(1025, 12);
 			this.UserInfoPanel.Margin = new System.Windows.Forms.Padding(4);
 			this.UserInfoPanel.Name = "UserInfoPanel";
-			this.UserInfoPanel.Size = new System.Drawing.Size(354, 253);
+			this.UserInfoPanel.Size = new System.Drawing.Size(238, 208);
 			this.UserInfoPanel.TabIndex = 1;
 			// 
 			// UserImage
 			// 
 			this.UserImage.BackgroundImage = global::InventoryManagementSystem_v2.Properties.Resources.baseline_account_circle_black_24dp;
 			this.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.UserImage.Location = new System.Drawing.Point(103, 38);
+			this.UserImage.Location = new System.Drawing.Point(107, 6);
 			this.UserImage.Margin = new System.Windows.Forms.Padding(4);
 			this.UserImage.Name = "UserImage";
-			this.UserImage.Size = new System.Drawing.Size(127, 103);
+			this.UserImage.Size = new System.Drawing.Size(127, 54);
 			this.UserImage.TabIndex = 1;
 			this.UserImage.TabStop = false;
 			// 
@@ -79,12 +79,12 @@ namespace InventoryManagementSystem_v2
 			// 
 			this.UsernameLabel.AutoSize = true;
 			this.UsernameLabel.ForeColor = System.Drawing.SystemColors.Control;
-			this.UsernameLabel.Location = new System.Drawing.Point(86, 157);
+			this.UsernameLabel.Location = new System.Drawing.Point(129, 64);
 			this.UsernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.UsernameLabel.Name = "UsernameLabel";
-			this.UsernameLabel.Size = new System.Drawing.Size(146, 18);
+			this.UsernameLabel.Size = new System.Drawing.Size(105, 18);
 			this.UsernameLabel.TabIndex = 0;
-			this.UsernameLabel.Text = "<Username Here>";
+			this.UsernameLabel.Text = "<Username>";
 			// 
 			// groupBox1
 			// 
