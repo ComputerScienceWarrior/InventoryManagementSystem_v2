@@ -9,34 +9,35 @@ namespace InventoryManagementSystem_v2
 	class InventoryManager
 	{
 		//fields
-		List<InventoryItem> inventory = new List<InventoryItem>();
-
+		public List<InventoryItem> inventory_items;
+		public int count;
 		//constructors
-		public InventoryManager(){}
+		public InventoryManager(List<InventoryItem> inventory, int count)
+		{
+			this.inventory_items = inventory;
+			this.count = count;
+		}
 
 		//methods
 		public void DisplayProducts()
 		{
-			if (inventory.Count == 0)
+			foreach (InventoryItem item in this.inventory_items)
 			{
-				System.Windows.Forms.MessageBox.Show("No products to display!");
-			}
-			else
-			{
-				System.Windows.Forms.MessageBox.Show("Displaying Inventory Contents..");
+				System.Windows.Forms.MessageBox.Show(item.name);
 			}
 		}
 
 		public void AddProduct(InventoryItem item)
 		{
-			inventory.Add(item);
+			inventory_items.Add(item);
+			this.count += 1;
 		}
 
 		public void RemoveProduct(InventoryItem item)
 		{
-			if (inventory.Contains(item))
+			if (inventory_items.Contains(item))
 			{
-				inventory.Remove(item);
+				inventory_items.Remove(item);
 			}
 			else
 			{

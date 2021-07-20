@@ -9,9 +9,9 @@ namespace InventoryManagementSystem_v2
 	class InventoryItem
 	{
 		//class fields
-		private string name;
-		private decimal price;
-		private int quantity;
+		public string name;
+		public decimal price;
+		public int quantity;
 		
 		//various overloaded constructors
 		public InventoryItem(){}
@@ -38,6 +38,11 @@ namespace InventoryManagementSystem_v2
 			this.name = name;
 			price = 0.00M;
 			this.quantity = quantity;
+		}
+
+		public string toString()
+		{
+			return this.name + " | " + this.price + " | " + this.quantity;
 		}
 	}
 }

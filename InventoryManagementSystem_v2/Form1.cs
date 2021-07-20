@@ -12,7 +12,7 @@ namespace InventoryManagementSystem_v2
 {
 	public partial class MainScreen : Form
 	{
-		InventoryManager inventory = new InventoryManager();
+		InventoryManager inventory = new InventoryManager(new List<InventoryItem>(), 0);
 		public MainScreen()
 		{
 			InitializeComponent();
@@ -29,25 +29,22 @@ namespace InventoryManagementSystem_v2
 				//If price and quantity are valid..
 				if(decimal.TryParse(ItemPrice.Text, out price) && int.TryParse(ItemQuantity.Text, out quantity))
 				{
-					InventoryItem inventoryItem = new InventoryItem(name, price, quantity);
-					inventory.AddProduct(inventoryItem);
+					inventory.AddProduct(new InventoryItem(name, price, quantity));
 				}
 				//if quantity is left blank but price is not..
 				else if (decimal.TryParse(ItemPrice.Text, out price))
 				{
-					InventoryItem inventoryItem = new InventoryItem(name, price);
-					inventory.AddProduct(inventoryItem);
+					inventory.AddProduct(new InventoryItem(name, price));
 				}
 				//if price is left blank but quantity is not..
 				else if (int.TryParse(ItemQuantity.Text, out quantity))
 				{
-					InventoryItem inventoryItem = new InventoryItem(name, quantity);
-					inventory.AddProduct(inventoryItem);
+					inventory.AddProduct(new InventoryItem(name, quantity));
 				}
 				//if all else if false, just add in product with 'name' only.
 				else
 				{
-					InventoryItem inventoryItem = new InventoryItem(name);
+					inventory.AddProduct(new InventoryItem(name));
 				}
 				MessageBox.Show($"Successfully added {name} to inventory!");
 				ItemName.Text = "";
@@ -77,7 +74,12 @@ namespace InventoryManagementSystem_v2
 
 		private void DisplayButton_Click(object sender, EventArgs e)
 		{
+			//inventory.DisplayProducts();
 			inventory.DisplayProducts();
+			foreach (InventoryItem item in inventory.inventory_items)
+			{
+				InventoryDisplayList.Items.Add(item.name);
+			}
 		}
 	}
 }
