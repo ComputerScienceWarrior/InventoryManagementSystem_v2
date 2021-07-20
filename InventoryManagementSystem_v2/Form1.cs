@@ -81,5 +81,10 @@ namespace InventoryManagementSystem_v2
 				InventoryDisplayList.Items.Add(item.name);
 			}
 		}
+
+		private void ClearListButton_Click(object sender, EventArgs e)
+		{
+			InventoryDisplayList.Items.Clear();
+		}
 	}
 }

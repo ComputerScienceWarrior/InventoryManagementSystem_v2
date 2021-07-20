@@ -41,14 +41,15 @@ namespace InventoryManagementSystem_v2
 			this.AddButton = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.ItemName = new System.Windows.Forms.TextBox();
-			this.ItemPrice = new System.Windows.Forms.TextBox();
-			this.ItemQuantity = new System.Windows.Forms.TextBox();
-			this.ItemNameLabel = new System.Windows.Forms.Label();
-			this.ItemPriceLabel = new System.Windows.Forms.Label();
 			this.ItemQuantityLabel = new System.Windows.Forms.Label();
+			this.ItemPriceLabel = new System.Windows.Forms.Label();
+			this.ItemNameLabel = new System.Windows.Forms.Label();
+			this.ItemQuantity = new System.Windows.Forms.TextBox();
+			this.ItemPrice = new System.Windows.Forms.TextBox();
+			this.ItemName = new System.Windows.Forms.TextBox();
 			this.InventoryDisplayList = new System.Windows.Forms.ListBox();
 			this.InventoryDisplayBox = new System.Windows.Forms.GroupBox();
+			this.ClearListButton = new System.Windows.Forms.Button();
 			this.UserInfoPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
 			this.groupBox1.SuspendLayout();
@@ -93,7 +94,6 @@ namespace InventoryManagementSystem_v2
 			// 
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.SearchButton);
-			this.groupBox1.Controls.Add(this.DisplayButton);
 			this.groupBox1.Controls.Add(this.UpdateButton);
 			this.groupBox1.Controls.Add(this.RemoveButton);
 			this.groupBox1.Controls.Add(this.AddButton);
@@ -119,7 +119,7 @@ namespace InventoryManagementSystem_v2
 			// 
 			// SearchButton
 			// 
-			this.SearchButton.Location = new System.Drawing.Point(19, 143);
+			this.SearchButton.Location = new System.Drawing.Point(19, 200);
 			this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
 			this.SearchButton.Name = "SearchButton";
 			this.SearchButton.Size = new System.Drawing.Size(288, 26);
@@ -130,10 +130,10 @@ namespace InventoryManagementSystem_v2
 			// 
 			// DisplayButton
 			// 
-			this.DisplayButton.Location = new System.Drawing.Point(19, 202);
+			this.DisplayButton.Location = new System.Drawing.Point(17, 250);
 			this.DisplayButton.Margin = new System.Windows.Forms.Padding(4);
 			this.DisplayButton.Name = "DisplayButton";
-			this.DisplayButton.Size = new System.Drawing.Size(288, 26);
+			this.DisplayButton.Size = new System.Drawing.Size(247, 26);
 			this.DisplayButton.TabIndex = 3;
 			this.DisplayButton.Text = "Display Inventory";
 			this.DisplayButton.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@ namespace InventoryManagementSystem_v2
 			// 
 			// UpdateButton
 			// 
-			this.UpdateButton.Location = new System.Drawing.Point(19, 109);
+			this.UpdateButton.Location = new System.Drawing.Point(19, 144);
 			this.UpdateButton.Margin = new System.Windows.Forms.Padding(4);
 			this.UpdateButton.Name = "UpdateButton";
 			this.UpdateButton.Size = new System.Drawing.Size(288, 26);
@@ -152,7 +152,7 @@ namespace InventoryManagementSystem_v2
 			// 
 			// RemoveButton
 			// 
-			this.RemoveButton.Location = new System.Drawing.Point(19, 77);
+			this.RemoveButton.Location = new System.Drawing.Point(19, 95);
 			this.RemoveButton.Margin = new System.Windows.Forms.Padding(4);
 			this.RemoveButton.Name = "RemoveButton";
 			this.RemoveButton.Size = new System.Drawing.Size(288, 26);
@@ -197,37 +197,16 @@ namespace InventoryManagementSystem_v2
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Inventory Item Fields";
 			// 
-			// ItemName
+			// ItemQuantityLabel
 			// 
-			this.ItemName.Location = new System.Drawing.Point(19, 84);
-			this.ItemName.Name = "ItemName";
-			this.ItemName.Size = new System.Drawing.Size(288, 24);
-			this.ItemName.TabIndex = 4;
-			// 
-			// ItemPrice
-			// 
-			this.ItemPrice.Location = new System.Drawing.Point(20, 156);
-			this.ItemPrice.Name = "ItemPrice";
-			this.ItemPrice.Size = new System.Drawing.Size(288, 24);
-			this.ItemPrice.TabIndex = 5;
-			// 
-			// ItemQuantity
-			// 
-			this.ItemQuantity.Location = new System.Drawing.Point(20, 228);
-			this.ItemQuantity.Name = "ItemQuantity";
-			this.ItemQuantity.Size = new System.Drawing.Size(288, 24);
-			this.ItemQuantity.TabIndex = 6;
-			// 
-			// ItemNameLabel
-			// 
-			this.ItemNameLabel.AutoSize = true;
-			this.ItemNameLabel.ForeColor = System.Drawing.SystemColors.Control;
-			this.ItemNameLabel.Location = new System.Drawing.Point(17, 63);
-			this.ItemNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.ItemNameLabel.Name = "ItemNameLabel";
-			this.ItemNameLabel.Size = new System.Drawing.Size(94, 18);
-			this.ItemNameLabel.TabIndex = 5;
-			this.ItemNameLabel.Text = "Item Name:";
+			this.ItemQuantityLabel.AutoSize = true;
+			this.ItemQuantityLabel.ForeColor = System.Drawing.SystemColors.Control;
+			this.ItemQuantityLabel.Location = new System.Drawing.Point(17, 207);
+			this.ItemQuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.ItemQuantityLabel.Name = "ItemQuantityLabel";
+			this.ItemQuantityLabel.Size = new System.Drawing.Size(112, 18);
+			this.ItemQuantityLabel.TabIndex = 8;
+			this.ItemQuantityLabel.Text = "Item Quantity:";
 			// 
 			// ItemPriceLabel
 			// 
@@ -240,16 +219,37 @@ namespace InventoryManagementSystem_v2
 			this.ItemPriceLabel.TabIndex = 7;
 			this.ItemPriceLabel.Text = "Item Price:";
 			// 
-			// ItemQuantityLabel
+			// ItemNameLabel
 			// 
-			this.ItemQuantityLabel.AutoSize = true;
-			this.ItemQuantityLabel.ForeColor = System.Drawing.SystemColors.Control;
-			this.ItemQuantityLabel.Location = new System.Drawing.Point(17, 207);
-			this.ItemQuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.ItemQuantityLabel.Name = "ItemQuantityLabel";
-			this.ItemQuantityLabel.Size = new System.Drawing.Size(112, 18);
-			this.ItemQuantityLabel.TabIndex = 8;
-			this.ItemQuantityLabel.Text = "Item Quantity:";
+			this.ItemNameLabel.AutoSize = true;
+			this.ItemNameLabel.ForeColor = System.Drawing.SystemColors.Control;
+			this.ItemNameLabel.Location = new System.Drawing.Point(17, 63);
+			this.ItemNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.ItemNameLabel.Name = "ItemNameLabel";
+			this.ItemNameLabel.Size = new System.Drawing.Size(94, 18);
+			this.ItemNameLabel.TabIndex = 5;
+			this.ItemNameLabel.Text = "Item Name:";
+			// 
+			// ItemQuantity
+			// 
+			this.ItemQuantity.Location = new System.Drawing.Point(20, 228);
+			this.ItemQuantity.Name = "ItemQuantity";
+			this.ItemQuantity.Size = new System.Drawing.Size(288, 24);
+			this.ItemQuantity.TabIndex = 6;
+			// 
+			// ItemPrice
+			// 
+			this.ItemPrice.Location = new System.Drawing.Point(20, 156);
+			this.ItemPrice.Name = "ItemPrice";
+			this.ItemPrice.Size = new System.Drawing.Size(288, 24);
+			this.ItemPrice.TabIndex = 5;
+			// 
+			// ItemName
+			// 
+			this.ItemName.Location = new System.Drawing.Point(19, 84);
+			this.ItemName.Name = "ItemName";
+			this.ItemName.Size = new System.Drawing.Size(288, 24);
+			this.ItemName.TabIndex = 4;
 			// 
 			// InventoryDisplayList
 			// 
@@ -262,13 +262,26 @@ namespace InventoryManagementSystem_v2
 			// 
 			// InventoryDisplayBox
 			// 
+			this.InventoryDisplayBox.Controls.Add(this.ClearListButton);
 			this.InventoryDisplayBox.Controls.Add(this.InventoryDisplayList);
+			this.InventoryDisplayBox.Controls.Add(this.DisplayButton);
 			this.InventoryDisplayBox.Location = new System.Drawing.Point(376, 18);
 			this.InventoryDisplayBox.Name = "InventoryDisplayBox";
 			this.InventoryDisplayBox.Size = new System.Drawing.Size(526, 301);
 			this.InventoryDisplayBox.TabIndex = 3;
 			this.InventoryDisplayBox.TabStop = false;
 			this.InventoryDisplayBox.Text = "Listed Inventory";
+			// 
+			// ClearListButton
+			// 
+			this.ClearListButton.Location = new System.Drawing.Point(272, 250);
+			this.ClearListButton.Margin = new System.Windows.Forms.Padding(4);
+			this.ClearListButton.Name = "ClearListButton";
+			this.ClearListButton.Size = new System.Drawing.Size(235, 26);
+			this.ClearListButton.TabIndex = 5;
+			this.ClearListButton.Text = "Clear List";
+			this.ClearListButton.UseVisualStyleBackColor = true;
+			this.ClearListButton.Click += new System.EventHandler(this.ClearListButton_Click);
 			// 
 			// MainScreen
 			// 
@@ -318,6 +331,7 @@ namespace InventoryManagementSystem_v2
 		private System.Windows.Forms.Label ItemPriceLabel;
 		private System.Windows.Forms.ListBox InventoryDisplayList;
 		private System.Windows.Forms.GroupBox InventoryDisplayBox;
+		private System.Windows.Forms.Button ClearListButton;
 	}
 }
 
