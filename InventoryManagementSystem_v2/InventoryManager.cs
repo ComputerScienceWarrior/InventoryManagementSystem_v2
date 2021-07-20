@@ -33,15 +33,20 @@ namespace InventoryManagementSystem_v2
 			this.count += 1;
 		}
 
-		public void RemoveProduct(InventoryItem item)
+		public void RemoveProduct(string name)
 		{
-			if (inventory_items.Contains(item))
+			foreach (InventoryItem item in this.inventory_items)
 			{
-				inventory_items.Remove(item);
-			}
-			else
-			{
-				System.Windows.Forms.MessageBox.Show("Item does not exist!");
+				if (item.name == name)
+				{
+					this.inventory_items.Remove(item);
+					System.Windows.Forms.MessageBox.Show($"{name} removed from inventory.");
+					break;
+				}
+				else
+				{
+					System.Windows.Forms.MessageBox.Show($"{name} does not exist in the inventory.");
+				}
 			}
 		}
 	}

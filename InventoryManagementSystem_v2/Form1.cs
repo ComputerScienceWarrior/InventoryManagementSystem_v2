@@ -59,7 +59,7 @@ namespace InventoryManagementSystem_v2
 
 		private void RemoveButton_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("Clicked Remove Button!");
+			inventory.RemoveProduct(ItemName.Text);
 		}
 
 		private void UpdateButton_Click(object sender, EventArgs e)
