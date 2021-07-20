@@ -59,7 +59,14 @@ namespace InventoryManagementSystem_v2
 
 		private void RemoveButton_Click(object sender, EventArgs e)
 		{
-			inventory.RemoveProduct(ItemName.Text);
+			if (InventoryDisplayList.SelectedIndex != -1)
+			{
+				//inventory.RemoveProduct() //remove by selected index in list
+			}
+			else
+			{
+				inventory.RemoveProduct(ItemName.Text);
+			}
 		}
 
 		private void UpdateButton_Click(object sender, EventArgs e)
@@ -74,8 +81,7 @@ namespace InventoryManagementSystem_v2
 
 		private void DisplayButton_Click(object sender, EventArgs e)
 		{
-			//inventory.DisplayProducts();
-			inventory.DisplayProducts();
+			InventoryDisplayList.Items.Clear();
 			foreach (InventoryItem item in inventory.inventory_items)
 			{
 				InventoryDisplayList.Items.Add(item.name);

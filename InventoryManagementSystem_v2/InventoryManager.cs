@@ -19,13 +19,6 @@ namespace InventoryManagementSystem_v2
 		}
 
 		//methods
-		public void DisplayProducts()
-		{
-			foreach (InventoryItem item in this.inventory_items)
-			{
-				System.Windows.Forms.MessageBox.Show(item.name);
-			}
-		}
 
 		public void AddProduct(InventoryItem item)
 		{
@@ -46,6 +39,7 @@ namespace InventoryManagementSystem_v2
 				else
 				{
 					System.Windows.Forms.MessageBox.Show($"{name} does not exist in the inventory.");
+					break;
 				}
 			}
 		}
