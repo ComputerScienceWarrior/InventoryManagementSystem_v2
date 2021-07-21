@@ -73,7 +73,28 @@ namespace InventoryManagementSystem_v2
 
 		private void UpdateButton_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("Clicked Update Button!");
+			if (ItemName.Text != "")
+			{
+				if (InventoryDisplayList.SelectedIndex != -1)
+				{
+					InventoryItem newItem = new InventoryItem(ItemName.Text);
+					inventory.UpdateProduct(InventoryDisplayList.SelectedIndex, newItem);
+					InventoryDisplayList.Items.Clear();
+					foreach (InventoryItem item in inventory.inventory_items)
+					{
+						InventoryDisplayList.Items.Add(item.name);
+					}
+				}
+				else
+				{
+					MessageBox.Show("No Value selected to update.");
+				}
+			}
+			else
+			{
+				MessageBox.Show("There was no value entered in the 'Name' text box to update.");
+			}
+			
 		}
 
 		private void SearchButton_Click(object sender, EventArgs e)

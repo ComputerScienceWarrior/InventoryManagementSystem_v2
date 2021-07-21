@@ -30,5 +30,11 @@ namespace InventoryManagementSystem_v2
 		{
 			inventory_items.Remove(inventory_items[index]);
 		}
+
+		public void UpdateProduct(int index, InventoryItem newItem)
+		{
+			inventory_items[index] = newItem;
+			System.Windows.Forms.MessageBox.Show($"Successfully updated to {newItem.name}");
+		}
 	}
 }
