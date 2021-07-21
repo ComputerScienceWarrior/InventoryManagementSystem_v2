@@ -61,11 +61,13 @@ namespace InventoryManagementSystem_v2
 		{
 			if (InventoryDisplayList.SelectedIndex != -1)
 			{
-				//inventory.RemoveProduct() //remove by selected index in list
+				inventory.RemoveProduct(InventoryDisplayList.SelectedIndex); //remove by selected index in list
+				MessageBox.Show("Product Removed!");
+				InventoryDisplayList.Items.RemoveAt(InventoryDisplayList.SelectedIndex);
 			}
 			else
 			{
-				inventory.RemoveProduct(ItemName.Text);
+				MessageBox.Show("No Product Selected.");
 			}
 		}
 

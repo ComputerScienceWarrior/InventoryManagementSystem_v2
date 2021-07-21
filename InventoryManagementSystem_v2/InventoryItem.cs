@@ -44,5 +44,6 @@ namespace InventoryManagementSystem_v2
 		{
 			return this.name + " | " + this.price + " | " + this.quantity;
 		}
+
 	}
 }
