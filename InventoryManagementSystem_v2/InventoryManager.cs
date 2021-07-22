@@ -36,5 +36,18 @@ namespace InventoryManagementSystem_v2
 			inventory_items[index] = newItem;
 			System.Windows.Forms.MessageBox.Show($"Successfully updated to {newItem.name}");
 		}
+
+		public List<string> SearchProduct(string queryItem)
+		{
+			List<string> results = new List<string>();
+			foreach(InventoryItem itm in inventory_items)
+			{
+				if (itm.name == queryItem)
+				{
+					results.Add(queryItem);
+				}
+			}
+			return results;
+		}
 	}
 }

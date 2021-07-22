@@ -99,7 +99,16 @@ namespace InventoryManagementSystem_v2
 
 		private void SearchButton_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("Clicked Search Button!");
+			InventoryDisplayList.Items.Clear();
+			string searchItem = ItemName.Text;
+			List<string> results = new List<string>();
+			results = inventory.SearchProduct(searchItem);
+
+			MessageBox.Show($"{results.Count} results found!");
+			foreach (string result in results)
+			{
+				InventoryDisplayList.Items.Add(result);
+			}
 		}
 
 		private void DisplayButton_Click(object sender, EventArgs e)
