@@ -12,6 +12,7 @@ namespace InventoryManagementSystem_v2
 		public List<InventoryItem> inventory_items;
 		public int count;
 		//constructors
+		public InventoryManager() { }
 		public InventoryManager(List<InventoryItem> inventory, int count)
 		{
 			inventory_items = inventory;
@@ -34,10 +35,10 @@ namespace InventoryManagementSystem_v2
 		public void UpdateProduct(int index, InventoryItem newItem)
 		{
 			inventory_items[index] = newItem;
-			System.Windows.Forms.MessageBox.Show($"Successfully updated to {newItem.name}");
+			System.Windows.Forms.MessageBox.Show($"Successfully updated to {newItem.name}.");
 		}
 
-		public List<string> SearchProduct(string queryItem)
+		public List<string> FindProductByName(string queryItem)
 		{
 			List<string> results = new List<string>();
 			foreach(InventoryItem itm in inventory_items)
@@ -49,5 +50,29 @@ namespace InventoryManagementSystem_v2
 			}
 			return results;
 		}
+
+		public List<string> FindProductByPrice(string queryPrice)
+		{
+			decimal p = 0.00M;
+			List<string> results = new List<string>();
+			foreach(InventoryItem itm in inventory_items)
+			{
+				if(decimal.TryParse(queryPrice, out p))
+				{
+					System.Windows.Forms.MessageBox.Show(p.ToString(), queryPrice);
+					if (itm.price.ToString() == p.ToString())
+					{
+						results.Add(itm.name); //CHANGE THIS TO ADDING 'toString()' method of each item to display all details of item in list.
+					}
+				}
+				else
+				{
+					System.Windows.Forms.MessageBox.Show("You've enetered an incorrect value, try entering in the '0.00' format for price.");
+				}
+			}
+			return results;
+		}
+
+		
 	}
 }

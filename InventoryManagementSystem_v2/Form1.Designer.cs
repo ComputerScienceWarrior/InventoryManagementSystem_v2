@@ -32,36 +32,41 @@ namespace InventoryManagementSystem_v2
 			this.UserInfoPanel = new System.Windows.Forms.Panel();
 			this.UserImage = new System.Windows.Forms.PictureBox();
 			this.UsernameLabel = new System.Windows.Forms.Label();
-			this.SearchButton = new System.Windows.Forms.Button();
 			this.UpdateButton = new System.Windows.Forms.Button();
 			this.RemoveButton = new System.Windows.Forms.Button();
 			this.AddButton = new System.Windows.Forms.Button();
 			this.DisplayButton = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.ItemQuantityLabel = new System.Windows.Forms.Label();
-			this.ItemPriceLabel = new System.Windows.Forms.Label();
+			this.AddAndSearchFields = new System.Windows.Forms.GroupBox();
 			this.ItemNameLabel = new System.Windows.Forms.Label();
 			this.ItemQuantity = new System.Windows.Forms.TextBox();
+			this.InfoLabel = new System.Windows.Forms.Label();
 			this.ItemPrice = new System.Windows.Forms.TextBox();
+			this.ItemQuantityLabel = new System.Windows.Forms.Label();
 			this.ItemName = new System.Windows.Forms.TextBox();
+			this.ItemPriceLabel = new System.Windows.Forms.Label();
+			this.AddAndSearchButtons = new System.Windows.Forms.GroupBox();
 			this.InventoryDisplayList = new System.Windows.Forms.ListBox();
 			this.InventoryDisplayBox = new System.Windows.Forms.GroupBox();
-			this.ClearListButton = new System.Windows.Forms.Button();
-			this.InventoryListControls = new System.Windows.Forms.GroupBox();
 			this.DisplayListGroupBox = new System.Windows.Forms.GroupBox();
-			this.InfoLabel = new System.Windows.Forms.Label();
-			this.AddAndSearchFields = new System.Windows.Forms.GroupBox();
-			this.AddAndSearchButtons = new System.Windows.Forms.GroupBox();
+			this.InventoryListControls = new System.Windows.Forms.GroupBox();
+			this.ClearListButton = new System.Windows.Forms.Button();
+			this.PriceSearchButton = new System.Windows.Forms.Button();
+			this.NameSearchButton = new System.Windows.Forms.Button();
+			this.NameQuery = new System.Windows.Forms.TextBox();
+			this.PriceQuery = new System.Windows.Forms.TextBox();
+			this.QuantityQuery = new System.Windows.Forms.TextBox();
+			this.QuantitySearchButton = new System.Windows.Forms.Button();
 			this.UserInfoPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.UserImage)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			this.InventoryDisplayBox.SuspendLayout();
-			this.InventoryListControls.SuspendLayout();
-			this.DisplayListGroupBox.SuspendLayout();
 			this.AddAndSearchFields.SuspendLayout();
 			this.AddAndSearchButtons.SuspendLayout();
+			this.InventoryDisplayBox.SuspendLayout();
+			this.DisplayListGroupBox.SuspendLayout();
+			this.InventoryListControls.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// UserInfoPanel
@@ -96,17 +101,6 @@ namespace InventoryManagementSystem_v2
 			this.UsernameLabel.TabIndex = 0;
 			this.UsernameLabel.Text = "<Username>";
 			// 
-			// SearchButton
-			// 
-			this.SearchButton.Location = new System.Drawing.Point(14, 74);
-			this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
-			this.SearchButton.Name = "SearchButton";
-			this.SearchButton.Size = new System.Drawing.Size(288, 26);
-			this.SearchButton.TabIndex = 4;
-			this.SearchButton.Text = "Search";
-			this.SearchButton.UseVisualStyleBackColor = true;
-			this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-			// 
 			// UpdateButton
 			// 
 			this.UpdateButton.Location = new System.Drawing.Point(292, 90);
@@ -131,7 +125,7 @@ namespace InventoryManagementSystem_v2
 			// 
 			// AddButton
 			// 
-			this.AddButton.Location = new System.Drawing.Point(13, 26);
+			this.AddButton.Location = new System.Drawing.Point(14, 265);
 			this.AddButton.Margin = new System.Windows.Forms.Padding(4);
 			this.AddButton.Name = "AddButton";
 			this.AddButton.Size = new System.Drawing.Size(288, 26);
@@ -171,27 +165,22 @@ namespace InventoryManagementSystem_v2
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Inventory Item Fields";
 			// 
-			// ItemQuantityLabel
+			// AddAndSearchFields
 			// 
-			this.ItemQuantityLabel.AutoSize = true;
-			this.ItemQuantityLabel.ForeColor = System.Drawing.SystemColors.Control;
-			this.ItemQuantityLabel.Location = new System.Drawing.Point(11, 246);
-			this.ItemQuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.ItemQuantityLabel.Name = "ItemQuantityLabel";
-			this.ItemQuantityLabel.Size = new System.Drawing.Size(112, 18);
-			this.ItemQuantityLabel.TabIndex = 8;
-			this.ItemQuantityLabel.Text = "Item Quantity:";
-			// 
-			// ItemPriceLabel
-			// 
-			this.ItemPriceLabel.AutoSize = true;
-			this.ItemPriceLabel.ForeColor = System.Drawing.SystemColors.Control;
-			this.ItemPriceLabel.Location = new System.Drawing.Point(11, 172);
-			this.ItemPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.ItemPriceLabel.Name = "ItemPriceLabel";
-			this.ItemPriceLabel.Size = new System.Drawing.Size(89, 18);
-			this.ItemPriceLabel.TabIndex = 7;
-			this.ItemPriceLabel.Text = "Item Price:";
+			this.AddAndSearchFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.AddAndSearchFields.Controls.Add(this.ItemNameLabel);
+			this.AddAndSearchFields.Controls.Add(this.AddButton);
+			this.AddAndSearchFields.Controls.Add(this.ItemQuantity);
+			this.AddAndSearchFields.Controls.Add(this.InfoLabel);
+			this.AddAndSearchFields.Controls.Add(this.ItemPrice);
+			this.AddAndSearchFields.Controls.Add(this.ItemQuantityLabel);
+			this.AddAndSearchFields.Controls.Add(this.ItemName);
+			this.AddAndSearchFields.Controls.Add(this.ItemPriceLabel);
+			this.AddAndSearchFields.Location = new System.Drawing.Point(6, 23);
+			this.AddAndSearchFields.Name = "AddAndSearchFields";
+			this.AddAndSearchFields.Size = new System.Drawing.Size(317, 321);
+			this.AddAndSearchFields.TabIndex = 4;
+			this.AddAndSearchFields.TabStop = false;
 			// 
 			// ItemNameLabel
 			// 
@@ -206,17 +195,39 @@ namespace InventoryManagementSystem_v2
 			// 
 			// ItemQuantity
 			// 
-			this.ItemQuantity.Location = new System.Drawing.Point(14, 267);
+			this.ItemQuantity.Location = new System.Drawing.Point(14, 209);
 			this.ItemQuantity.Name = "ItemQuantity";
 			this.ItemQuantity.Size = new System.Drawing.Size(288, 24);
 			this.ItemQuantity.TabIndex = 6;
 			// 
+			// InfoLabel
+			// 
+			this.InfoLabel.AutoSize = true;
+			this.InfoLabel.ForeColor = System.Drawing.SystemColors.Control;
+			this.InfoLabel.Location = new System.Drawing.Point(27, 43);
+			this.InfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.InfoLabel.Name = "InfoLabel";
+			this.InfoLabel.Size = new System.Drawing.Size(169, 18);
+			this.InfoLabel.TabIndex = 9;
+			this.InfoLabel.Text = "Add an Inventory item";
+			// 
 			// ItemPrice
 			// 
-			this.ItemPrice.Location = new System.Drawing.Point(14, 193);
+			this.ItemPrice.Location = new System.Drawing.Point(14, 161);
 			this.ItemPrice.Name = "ItemPrice";
 			this.ItemPrice.Size = new System.Drawing.Size(288, 24);
 			this.ItemPrice.TabIndex = 5;
+			// 
+			// ItemQuantityLabel
+			// 
+			this.ItemQuantityLabel.AutoSize = true;
+			this.ItemQuantityLabel.ForeColor = System.Drawing.SystemColors.Control;
+			this.ItemQuantityLabel.Location = new System.Drawing.Point(11, 188);
+			this.ItemQuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.ItemQuantityLabel.Name = "ItemQuantityLabel";
+			this.ItemQuantityLabel.Size = new System.Drawing.Size(112, 18);
+			this.ItemQuantityLabel.TabIndex = 8;
+			this.ItemQuantityLabel.Text = "Item Quantity:";
 			// 
 			// ItemName
 			// 
@@ -224,6 +235,31 @@ namespace InventoryManagementSystem_v2
 			this.ItemName.Name = "ItemName";
 			this.ItemName.Size = new System.Drawing.Size(288, 24);
 			this.ItemName.TabIndex = 4;
+			// 
+			// ItemPriceLabel
+			// 
+			this.ItemPriceLabel.AutoSize = true;
+			this.ItemPriceLabel.ForeColor = System.Drawing.SystemColors.Control;
+			this.ItemPriceLabel.Location = new System.Drawing.Point(11, 140);
+			this.ItemPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.ItemPriceLabel.Name = "ItemPriceLabel";
+			this.ItemPriceLabel.Size = new System.Drawing.Size(89, 18);
+			this.ItemPriceLabel.TabIndex = 7;
+			this.ItemPriceLabel.Text = "Item Price:";
+			// 
+			// AddAndSearchButtons
+			// 
+			this.AddAndSearchButtons.Controls.Add(this.QuantitySearchButton);
+			this.AddAndSearchButtons.Controls.Add(this.QuantityQuery);
+			this.AddAndSearchButtons.Controls.Add(this.PriceQuery);
+			this.AddAndSearchButtons.Controls.Add(this.NameQuery);
+			this.AddAndSearchButtons.Controls.Add(this.NameSearchButton);
+			this.AddAndSearchButtons.Controls.Add(this.PriceSearchButton);
+			this.AddAndSearchButtons.Location = new System.Drawing.Point(6, 350);
+			this.AddAndSearchButtons.Name = "AddAndSearchButtons";
+			this.AddAndSearchButtons.Size = new System.Drawing.Size(317, 119);
+			this.AddAndSearchButtons.TabIndex = 5;
+			this.AddAndSearchButtons.TabStop = false;
 			// 
 			// InventoryDisplayList
 			// 
@@ -245,16 +281,14 @@ namespace InventoryManagementSystem_v2
 			this.InventoryDisplayBox.TabStop = false;
 			this.InventoryDisplayBox.Text = "Listed Inventory";
 			// 
-			// ClearListButton
+			// DisplayListGroupBox
 			// 
-			this.ClearListButton.Location = new System.Drawing.Point(292, 42);
-			this.ClearListButton.Margin = new System.Windows.Forms.Padding(4);
-			this.ClearListButton.Name = "ClearListButton";
-			this.ClearListButton.Size = new System.Drawing.Size(235, 26);
-			this.ClearListButton.TabIndex = 5;
-			this.ClearListButton.Text = "Clear List";
-			this.ClearListButton.UseVisualStyleBackColor = true;
-			this.ClearListButton.Click += new System.EventHandler(this.ClearListButton_Click);
+			this.DisplayListGroupBox.Controls.Add(this.InventoryDisplayList);
+			this.DisplayListGroupBox.Location = new System.Drawing.Point(6, 23);
+			this.DisplayListGroupBox.Name = "DisplayListGroupBox";
+			this.DisplayListGroupBox.Size = new System.Drawing.Size(545, 311);
+			this.DisplayListGroupBox.TabIndex = 4;
+			this.DisplayListGroupBox.TabStop = false;
 			// 
 			// InventoryListControls
 			// 
@@ -269,51 +303,71 @@ namespace InventoryManagementSystem_v2
 			this.InventoryListControls.TabStop = false;
 			this.InventoryListControls.Text = "Inventory List Controls";
 			// 
-			// DisplayListGroupBox
+			// ClearListButton
 			// 
-			this.DisplayListGroupBox.Controls.Add(this.InventoryDisplayList);
-			this.DisplayListGroupBox.Location = new System.Drawing.Point(6, 23);
-			this.DisplayListGroupBox.Name = "DisplayListGroupBox";
-			this.DisplayListGroupBox.Size = new System.Drawing.Size(545, 311);
-			this.DisplayListGroupBox.TabIndex = 4;
-			this.DisplayListGroupBox.TabStop = false;
+			this.ClearListButton.Location = new System.Drawing.Point(292, 42);
+			this.ClearListButton.Margin = new System.Windows.Forms.Padding(4);
+			this.ClearListButton.Name = "ClearListButton";
+			this.ClearListButton.Size = new System.Drawing.Size(235, 26);
+			this.ClearListButton.TabIndex = 5;
+			this.ClearListButton.Text = "Clear List";
+			this.ClearListButton.UseVisualStyleBackColor = true;
+			this.ClearListButton.Click += new System.EventHandler(this.ClearListButton_Click);
 			// 
-			// InfoLabel
+			// PriceSearchButton
 			// 
-			this.InfoLabel.AutoSize = true;
-			this.InfoLabel.ForeColor = System.Drawing.SystemColors.Control;
-			this.InfoLabel.Location = new System.Drawing.Point(27, 43);
-			this.InfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.InfoLabel.Name = "InfoLabel";
-			this.InfoLabel.Size = new System.Drawing.Size(274, 18);
-			this.InfoLabel.TabIndex = 9;
-			this.InfoLabel.Text = "Add or Search for an Inventory item";
+			this.PriceSearchButton.Location = new System.Drawing.Point(174, 49);
+			this.PriceSearchButton.Margin = new System.Windows.Forms.Padding(4);
+			this.PriceSearchButton.Name = "PriceSearchButton";
+			this.PriceSearchButton.Size = new System.Drawing.Size(136, 26);
+			this.PriceSearchButton.TabIndex = 5;
+			this.PriceSearchButton.Text = "Search price";
+			this.PriceSearchButton.UseVisualStyleBackColor = true;
+			this.PriceSearchButton.Click += new System.EventHandler(this.PriceSearchButton_Click);
 			// 
-			// AddAndSearchFields
+			// NameSearchButton
 			// 
-			this.AddAndSearchFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.AddAndSearchFields.Controls.Add(this.ItemNameLabel);
-			this.AddAndSearchFields.Controls.Add(this.ItemQuantity);
-			this.AddAndSearchFields.Controls.Add(this.InfoLabel);
-			this.AddAndSearchFields.Controls.Add(this.ItemPrice);
-			this.AddAndSearchFields.Controls.Add(this.ItemQuantityLabel);
-			this.AddAndSearchFields.Controls.Add(this.ItemName);
-			this.AddAndSearchFields.Controls.Add(this.ItemPriceLabel);
-			this.AddAndSearchFields.Location = new System.Drawing.Point(6, 23);
-			this.AddAndSearchFields.Name = "AddAndSearchFields";
-			this.AddAndSearchFields.Size = new System.Drawing.Size(317, 321);
-			this.AddAndSearchFields.TabIndex = 4;
-			this.AddAndSearchFields.TabStop = false;
+			this.NameSearchButton.Location = new System.Drawing.Point(174, 15);
+			this.NameSearchButton.Margin = new System.Windows.Forms.Padding(4);
+			this.NameSearchButton.Name = "NameSearchButton";
+			this.NameSearchButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.NameSearchButton.Size = new System.Drawing.Size(136, 26);
+			this.NameSearchButton.TabIndex = 6;
+			this.NameSearchButton.Text = "Search name";
+			this.NameSearchButton.UseVisualStyleBackColor = true;
+			this.NameSearchButton.Click += new System.EventHandler(this.NameSearchButton_Click);
 			// 
-			// AddAndSearchButtons
+			// NameQuery
 			// 
-			this.AddAndSearchButtons.Controls.Add(this.SearchButton);
-			this.AddAndSearchButtons.Controls.Add(this.AddButton);
-			this.AddAndSearchButtons.Location = new System.Drawing.Point(6, 350);
-			this.AddAndSearchButtons.Name = "AddAndSearchButtons";
-			this.AddAndSearchButtons.Size = new System.Drawing.Size(317, 119);
-			this.AddAndSearchButtons.TabIndex = 5;
-			this.AddAndSearchButtons.TabStop = false;
+			this.NameQuery.Location = new System.Drawing.Point(6, 15);
+			this.NameQuery.Name = "NameQuery";
+			this.NameQuery.Size = new System.Drawing.Size(161, 24);
+			this.NameQuery.TabIndex = 10;
+			// 
+			// PriceQuery
+			// 
+			this.PriceQuery.Location = new System.Drawing.Point(6, 49);
+			this.PriceQuery.Name = "PriceQuery";
+			this.PriceQuery.Size = new System.Drawing.Size(161, 24);
+			this.PriceQuery.TabIndex = 11;
+			// 
+			// QuantityQuery
+			// 
+			this.QuantityQuery.Location = new System.Drawing.Point(6, 83);
+			this.QuantityQuery.Name = "QuantityQuery";
+			this.QuantityQuery.Size = new System.Drawing.Size(161, 24);
+			this.QuantityQuery.TabIndex = 12;
+			// 
+			// QuantitySearchButton
+			// 
+			this.QuantitySearchButton.Location = new System.Drawing.Point(174, 83);
+			this.QuantitySearchButton.Margin = new System.Windows.Forms.Padding(4);
+			this.QuantitySearchButton.Name = "QuantitySearchButton";
+			this.QuantitySearchButton.Size = new System.Drawing.Size(136, 24);
+			this.QuantitySearchButton.TabIndex = 13;
+			this.QuantitySearchButton.Text = "Search quantity";
+			this.QuantitySearchButton.UseVisualStyleBackColor = true;
+			this.QuantitySearchButton.Click += new System.EventHandler(this.QuantitySearchButton_Click);
 			// 
 			// MainScreen
 			// 
@@ -334,12 +388,13 @@ namespace InventoryManagementSystem_v2
 			((System.ComponentModel.ISupportInitialize)(this.UserImage)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
-			this.InventoryDisplayBox.ResumeLayout(false);
-			this.InventoryListControls.ResumeLayout(false);
-			this.DisplayListGroupBox.ResumeLayout(false);
 			this.AddAndSearchFields.ResumeLayout(false);
 			this.AddAndSearchFields.PerformLayout();
 			this.AddAndSearchButtons.ResumeLayout(false);
+			this.AddAndSearchButtons.PerformLayout();
+			this.InventoryDisplayBox.ResumeLayout(false);
+			this.DisplayListGroupBox.ResumeLayout(false);
+			this.InventoryListControls.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -348,7 +403,6 @@ namespace InventoryManagementSystem_v2
 		private System.Windows.Forms.Panel UserInfoPanel;
 		private System.Windows.Forms.Label UsernameLabel;
 		private System.Windows.Forms.PictureBox UserImage;
-		private System.Windows.Forms.Button SearchButton;
 		private System.Windows.Forms.Button DisplayButton;
 		private System.Windows.Forms.Button UpdateButton;
 		private System.Windows.Forms.Button RemoveButton;
@@ -369,6 +423,12 @@ namespace InventoryManagementSystem_v2
 		private System.Windows.Forms.GroupBox DisplayListGroupBox;
 		private System.Windows.Forms.GroupBox AddAndSearchFields;
 		private System.Windows.Forms.GroupBox AddAndSearchButtons;
+		private System.Windows.Forms.Button NameSearchButton;
+		private System.Windows.Forms.Button PriceSearchButton;
+		private System.Windows.Forms.TextBox QuantityQuery;
+		private System.Windows.Forms.TextBox PriceQuery;
+		private System.Windows.Forms.TextBox NameQuery;
+		private System.Windows.Forms.Button QuantitySearchButton;
 	}
 }
 

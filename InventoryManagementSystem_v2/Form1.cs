@@ -97,20 +97,6 @@ namespace InventoryManagementSystem_v2
 			
 		}
 
-		private void SearchButton_Click(object sender, EventArgs e)
-		{
-			InventoryDisplayList.Items.Clear();
-			string searchItem = ItemName.Text;
-			List<string> results = new List<string>();
-			results = inventory.SearchProduct(searchItem);
-
-			MessageBox.Show($"{results.Count} results found!");
-			foreach (string result in results)
-			{
-				InventoryDisplayList.Items.Add(result);
-			}
-		}
-
 		private void DisplayButton_Click(object sender, EventArgs e)
 		{
 			InventoryDisplayList.Items.Clear();
@@ -123,6 +109,21 @@ namespace InventoryManagementSystem_v2
 		private void ClearListButton_Click(object sender, EventArgs e)
 		{
 			InventoryDisplayList.Items.Clear();
+		}
+
+		private void NameSearchButton_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(NameQuery.Text);
+		}
+
+		private void PriceSearchButton_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(PriceQuery.Text);
+		}
+
+		private void QuantitySearchButton_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(QuantityQuery.Text);
 		}
 	}
 }
