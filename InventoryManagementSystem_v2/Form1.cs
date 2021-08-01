@@ -113,7 +113,16 @@ namespace InventoryManagementSystem_v2
 
 		private void NameSearchButton_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show(NameQuery.Text);
+			List<string> results = inventory.FindProductByName(NameQuery.Text);
+			if (results == null)
+			{
+				MessageBox.Show($"{NameQuery.Text} not found in inventory.");
+			}
+			else
+			{
+				MessageBox.Show($"Found item {NameQuery.Text.ToLower()} in inventory.");
+				InventoryDisplayList.Items.Add(results[0]);
+			}
 		}
 
 		private void PriceSearchButton_Click(object sender, EventArgs e)
